@@ -27,13 +27,13 @@ function Login() {
 
   return (
     <div>
-      <h1>ur waifu loves u shubu</h1>
+      <h1>Login</h1>
       {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
       <form onSubmit={handleSubmit}>
      
         <input
           type="email"
-          placeholder="Emaiiiiiiiiiiiiiiiiiiii"
+          placeholder="Emaiiiiiiiiiid56butyhiiiiiiiiii"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
