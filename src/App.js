@@ -5,6 +5,7 @@ import Login from './user/Login';
 import ProductPage from './components/ProductPage ';
 import ProductDetail from './components/ProductDetail';
 import OrderPage from './components/OrderPage';
+import ForgotPassword from './user/ForgotPassword';
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/" element={<ProductPage />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/order/:id" element={<OrderPage />} />
+        <Route path='forget' element={<ForgotPassword/>}/>
       </Routes>
       </div>
    

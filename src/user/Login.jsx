@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { FaEye} from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -17,7 +18,7 @@ function Login() {
     e.preventDefault();
     try {
       const response = await axios.post
-      ("http://localhost:5000/api/login", { email, password });
+      ("https://server-35lt.onrender.com/api/login", { email, password });
       alert(response.data.message);
     } catch (error) {
       setErrorMessage(error.response?.data?.message || "Error occurred");
@@ -27,7 +28,9 @@ function Login() {
 
   return (
     <div>
-      <h1>Login</h1>
+      <h1>Log</h1>
+      <Link to='/signup'>Signup</Link>
+      <Link to='/forget'><p>Forgot Password</p></Link>
       {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
       <form onSubmit={handleSubmit}>
      

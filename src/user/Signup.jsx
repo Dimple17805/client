@@ -42,6 +42,8 @@ function Signup() {
     <div>
       <h2>Sign Up</h2>
       <Link to='/login'><p>already have an account? Loggin</p></Link>
+      <Link to='/signup'><p>Forgot Password</p></Link>
+      <Link to='/forget'><p>Forgot Password</p></Link>
       
       {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
       {!isOtpSent ? (
