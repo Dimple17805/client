@@ -14,7 +14,7 @@ function Signup() {
     e.preventDefault();
     try {
       console.log("Sending signup request");
-      const response = await axios.post("http://localhost:5000/api/signup", { email, password });
+      const response = await axios.post("https://server-35lt.onrender.com/api/signup", { email, password });
       console.log("Signup response:", response.data);
       alert(response.data.message);
       setIsOtpSent(true); // Show OTP input after sending OTP
@@ -29,7 +29,7 @@ function Signup() {
     e.preventDefault();
     try {
       console.log("Sending OTP verification request");
-      const response = await axios.post("http://localhost:5000/api/verify-otp", { email, password, otp });
+      const response = await axios.post("https://server-35lt.onrender.com/api/verify-otp", { email, password, otp });
       console.log("OTP verification response:", response.data);
       alert(response.data.message);
     } catch (error) {

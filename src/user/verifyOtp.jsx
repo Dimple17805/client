@@ -8,7 +8,7 @@ function Verify({ email, onVerified, action }) {
     e.preventDefault();
     try {
       const endpoint = action === "signup" ? "/verify-otp" : "/verify-login-otp";
-      const response = await axios.post(`http://localhost:5000/api${endpoint}`, { email, otp });
+      const response = await axios.post(`https://server-35lt.onrender.com/api${endpoint}`, { email, otp });
       alert(response.data.message);
       if (response.data.message === "User created successfully" || response.data.message === "Login successful") {
         onVerified();

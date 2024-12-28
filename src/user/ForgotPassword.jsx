@@ -17,7 +17,7 @@ function ForgotPassword() {
     e.preventDefault();
     setError("");
     try {
-      const response = await axios.post("http://localhost:5000/api/request-password", { email });
+      const response = await axios.post("https://server-35lt.onrender.com/api/request-password", { email });
       setMessage(response.data.message);
       setIsOtpSent(true);
       setCountdown(30);
@@ -32,7 +32,7 @@ function ForgotPassword() {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:5000/api/verifie-otp", { email, otp });
+      const response = await axios.post("https://server-35lt.onrender.com/api/verifie-otp", { email, otp });
       setMessage(response.data.message);
       setIsOtpVerified(true);
     } catch (error) {
@@ -45,7 +45,7 @@ function ForgotPassword() {
   const handleResendOtp = async () => {
     setError("");
     try {
-      const response = await axios.post("http://localhost:5000/api/resend-otp", { email });
+      const response = await axios.post("https://server-35lt.onrender.com/api/resend-otp", { email });
       setMessage(response.data.message);
       setCountdown(30);
     } catch (error) {
@@ -60,7 +60,7 @@ function ForgotPassword() {
       return;
     }
     try {
-      const response = await axios.post("http://localhost:5000/api/reset-password", { email, newPassword });
+      const response = await axios.post("https://server-35lt.onrender.com/api/reset-password", { email, newPassword });
       setMessage(response.data.message);
     } catch (error) {
       setError(error.response?.data?.message || "Error resetting password");
